@@ -6,10 +6,15 @@ from __future__ import annotations
 from pathlib import Path
 from shiny import App, Inputs, Outputs, Session, ui
 
-import seaborn as sns
-from shiny import reactive
-from shiny.express import render, ui
-penguins = sns.load_dataset("penguins")
+import pandas as pd
+import plotly.express as px
+from shiny.express import input, ui
+from shinywidgets import render_widget  
+
+f = './Temixco_2018_10Min.csv'
+
+tmx = pd.read_csv(f,index_col=0,parse_dates=True)
+columnas = tmx.columns.to_list()
 
 # ========================================================================
 
@@ -17,54 +22,23 @@ penguins = sns.load_dataset("penguins")
 
 
 def server(input: Inputs, output: Outputs, session: Session) -> None:
-    species = list(penguins["species"].value_counts().index)
-    ui.input_checkbox_group(
-        "species", "Species:",
-        species, selected = species
-    )
-
-    islands = list(penguins["island"].value_counts().index)
-    ui.input_checkbox_group(
-        "islands", "Islands:",
-        islands, selected = islands
-    )
-
-    @reactive.calc
-    def filtered_penguins():
-        data = penguins[penguins["species"].isin(input.species())]
-        data = data[data["island"].isin(input.islands())]
-        return data
+    ui.input_selectize(  
+        "variable",  
+        "Selecciona:", 
+        columnas,
+        multiple=True,
+    )  
 
     # ========================================================================
 
-    ui.input_select("dist", "Distribution:", choices=["kde", "hist"])
-    ui.input_checkbox("rug", "Show rug marks", value = False)
-
-    # ========================================================================
-
-    @render.plot
-    def depth():
-        return sns.displot(
-            filtered_penguins(), x = "bill_depth_mm",
-            hue = "species", kind = input.dist(),
-            fill = True, rug=input.rug()
+    @render_widget  
+    def plot():  
+        scatterplot = px.line(
+            data_frame=tmx,
+            x=tmx.index,
+            y=list(input.variable())
         )
-
-    # ========================================================================
-
-    @render.plot
-    def length():
-        return sns.displot(
-            filtered_penguins(), x = "bill_length_mm",
-            hue = "species", kind = input.dist(),
-            fill = True, rug=input.rug()
-        )
-
-    # ========================================================================
-
-    @render.data_frame
-    def dataview():
-        return render.DataGrid(filtered_penguins())
+        return scatterplot  
 
     # ========================================================================
 

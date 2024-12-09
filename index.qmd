@@ -1,75 +1,48 @@
 ---
-title: "Palmer Penguins"
-author: "Cobblepot Analytics"
+title: "Esolmet data explorer"
+author: "G. Barrios"
 format: dashboard
 server: shiny
 ---
 
+## La App 
 ```{python}
 #| context: setup
-import seaborn as sns
-from shiny import reactive
-from shiny.express import render, ui
-penguins = sns.load_dataset("penguins")
+import pandas as pd
+import plotly.express as px
+from shiny.express import input, ui
+from shinywidgets import render_widget  
+
+f = './Temixco_2018_10Min.csv'
+
+tmx = pd.read_csv(f,index_col=0,parse_dates=True)
+columnas = tmx.columns.to_list()
 ```
+
+
 
 # {.sidebar}
 
-
 ```{python}
-species = list(penguins["species"].value_counts().index)
-ui.input_checkbox_group(
-    "species", "Species:",
-    species, selected = species
-)
-
-islands = list(penguins["island"].value_counts().index)
-ui.input_checkbox_group(
-    "islands", "Islands:",
-    islands, selected = islands
-)
-
-@reactive.calc
-def filtered_penguins():
-    data = penguins[penguins["species"].isin(input.species())]
-    data = data[data["island"].isin(input.islands())]
-    return data
+ui.input_selectize(  
+    "variable",  
+    "Selecciona:", 
+    columnas,
+    multiple=True,
+)  
 ```
 
-```{python}
-ui.input_select("dist", "Distribution:", choices=["kde", "hist"])
-ui.input_checkbox("rug", "Show rug marks", value = False)
-```
-
-[Learn more](https://pypi.org/project/palmerpenguins/) about the
-Palmer Penguins dataset.
 
 # Plots
 
 ```{python}
-@render.plot
-def depth():
-    return sns.displot(
-        filtered_penguins(), x = "bill_depth_mm",
-        hue = "species", kind = input.dist(),
-        fill = True, rug=input.rug()
+@render_widget  
+def plot():  
+    scatterplot = px.line(
+        data_frame=tmx,
+        x=tmx.index,
+        y=list(input.variable())
     )
-```
+    return scatterplot  
 
-```{python}
-@render.plot
-def length():
-    return sns.displot(
-        filtered_penguins(), x = "bill_length_mm",
-        hue = "species", kind = input.dist(),
-        fill = True, rug=input.rug()
-    )
-```
-
-# Data
-
-```{python}
-@render.data_frame
-def dataview():
-    return render.DataGrid(filtered_penguins())
 ```

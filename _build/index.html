@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Cobblepot Analytics">
+<meta name="author" content="G. Barrios">
 
-<title>Palmer Penguins</title>
+<title>Esolmet data explorer</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -63,52 +63,26 @@ ul.task-list li input[type="checkbox"] {
     <div class="navbar-brand-container">       
 
       <div class="navbar-title">
-        <div class="navbar-title-text"><a href="#">Palmer Penguins</a></div>
+        <div class="navbar-title-text"><a href="#">Esolmet data explorer</a></div>
         
-        <div class="navbar-author">Cobblepot Analytics</div>
+        <div class="navbar-author">G. Barrios</div>
       </div>
     </div>
-<div id="dashboard-collapse" class="navbar-collapse collapse"><ul class="navbar-nav navbar-nav-scroll me-auto" role="tablist"><li class="nav-item" role="presentation"><a id="tab-plots" class="nav-link active" data-bs-toggle="tab" role="tab" data-bs-target="#plots" data-scrolling="false" href="#plots" aria-controls="plots" aria-selected="true"><span class="nav-link-text">Plots</span></a></li><li class="nav-item" role="presentation"><a id="tab-data" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#data" data-scrolling="false" href="#data" aria-controls="data" aria-selected="false"><span class="nav-link-text">Data</span></a></li></ul></div></div>
+<div id="dashboard-collapse" class="navbar-collapse collapse"><ul class="navbar-nav navbar-nav-scroll me-auto" role="tablist"><li class="nav-item" role="presentation"><a id="tab-plots" class="nav-link active" data-bs-toggle="tab" role="tab" data-bs-target="#plots" data-scrolling="false" href="#plots" aria-controls="plots" aria-selected="true"><span class="nav-link-text">Plots</span></a></li></ul></div></div>
 </nav>
 </header>
 <div class="page-layout-custom quarto-dashboard-content bslib-gap-spacing html-fill-container bslib-page-fill quarto-dashboard-pages dashboard-sidebar-container">  
 
-<div class="bslib-sidebar-layout html-fill-item html-fill-container" data-bslib-sidebar-open="desktop" data-bslib-sidebar-init="true" data-bslib-sidebar-border="false" data-bslib-sidebar-border-radius="false"><div class="main html-fill-container html-fill-item"><div class="sidebar-content html-fill-item html-fill-container">
+<div class="bslib-sidebar-layout html-fill-item sidebar-right html-fill-container" data-bslib-sidebar-open="desktop" data-bslib-sidebar-init="true" data-bslib-sidebar-border="false" data-bslib-sidebar-border-radius="false"><div class="main html-fill-container html-fill-item"><div class="sidebar-content html-fill-item html-fill-container">
 <div class="tab-content bslib-grid html-fill-item html-fill-container" style="display: grid; grid-template-columns: minmax(3em, 1fr);
 grid-auto-rows: minmax(0, 1fr);">
 <div id="plots" class="dashboard-page tab-pane show active html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-plots">
-<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 1fr) minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
-<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
-<div class="card-body html-fill-item html-fill-container">
-<div class="cell-output cell-output-display html-fill-item html-fill-container">
-<div id="depth" class="shiny-image-output html-fill-item shiny-plot-output html-fill-container" style="width:100%;height:400px;"></div><script type="application/json" data-html-dependency="">{"name": "htmltools-fill", "version": "0.5.8.9000", "source": {"package": "shiny", "subdir": "www/shared/htmltools/fill"}, "script": [], "stylesheet": [{"href": "fill.css", "rel": "stylesheet"}], "meta": [], "all_files": false, "head": null}</script>
-</div>
-</div>
-<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
-    <template>Expand</template>
-    <span class="bslib-full-screen-enter badge rounded-pill">
-        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
-    </span>
-</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
-<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
-<div class="card-body html-fill-item html-fill-container">
-<div class="cell-output cell-output-display html-fill-item html-fill-container">
-<div id="length" class="shiny-image-output html-fill-item shiny-plot-output html-fill-container" style="width:100%;height:400px;"></div><script type="application/json" data-html-dependency="">{"name": "htmltools-fill", "version": "0.5.8.9000", "source": {"package": "shiny", "subdir": "www/shared/htmltools/fill"}, "script": [], "stylesheet": [{"href": "fill.css", "rel": "stylesheet"}], "meta": [], "all_files": false, "head": null}</script>
-</div>
-</div>
-<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
-    <template>Expand</template>
-    <span class="bslib-full-screen-enter badge rounded-pill">
-        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
-    </span>
-</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
-</div>
-</div><div id="data" class="dashboard-page tab-pane grid-skip html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-data">
 <div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
 <div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output cell-output-display html-fill-item html-fill-container">
-<shiny-data-frame id="dataview" class="html-fill-item html-fill-container"></shiny-data-frame><script type="application/json" data-html-dependency="">{"name": "shiny-data-frame-output", "version": "1.2.1", "source": {"package": "shiny", "subdir": "www/py-shiny/data-frame"}, "script": [{"src": "data-frame.js", "type": "module"}], "stylesheet": [], "meta": [], "all_files": false, "head": null}</script>
+<div id="plot" class="shiny-ipywidget-output shiny-report-size shiny-report-theme html-fill-item html-fill-container"></div><script type="application/json" data-html-dependency="">{"name": "ipywidget-output-binding", "version": "0.3.4", "source": {"package": "shinywidgets", "subdir": "static"}, "script": [{"src": "libembed-amd.js"}, {"src": "output.js"}], "stylesheet": [{"href": "shinywidgets.css", "rel": "stylesheet"}], "meta": [], "all_files": false, "head": null}</script>
+<script type="application/json" data-html-dependency="">{"name": "headcontent_64c93189711f8969640e7b8f06f689fadea80c2e", "version": "0.0", "source": null, "script": [], "stylesheet": [], "meta": [], "all_files": false, "head": "<script data-jupyter-widgets-cdn=\"https://cdn.jsdelivr.net/npm/\"><\/script>"}</script>
 <script type="application/json" data-html-dependency="">{"name": "htmltools-fill", "version": "0.5.8.9000", "source": {"package": "shiny", "subdir": "www/shared/htmltools/fill"}, "script": [], "stylesheet": [{"href": "fill.css", "rel": "stylesheet"}], "meta": [], "all_files": false, "head": null}</script>
 </div>
 </div>
@@ -125,55 +99,21 @@ grid-auto-rows: minmax(0, 1fr);">
 </div>
 </div>
 </div></div><aside id="bslib-sidebar-1" class="sidebar html-fill-container html-fill-item"><div class="html-fill-container html-fill-item">
-<div class="cell-output cell-output-display" data-execution_count="2">
-<div id="species" class="form-group shiny-input-checkboxgroup shiny-input-container" role="group" aria-labelledby="species-label">
-  <label class="control-label" id="species-label" for="species">Species:</label>
-  <div class="shiny-options-group">
-    <div class="checkbox">
-      <label><input type="checkbox" name="species" value="Adelie" checked="checked"> <span>Adelie</span></label>
-    </div>
-    <div class="checkbox">
-      <label><input type="checkbox" name="species" value="Gentoo" checked="checked"> <span>Gentoo</span></label>
-    </div>
-    <div class="checkbox">
-      <label><input type="checkbox" name="species" value="Chinstrap" checked="checked"> <span>Chinstrap</span></label>
-    </div>
-  </div>
-</div>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="2">
-<div id="islands" class="form-group shiny-input-checkboxgroup shiny-input-container" role="group" aria-labelledby="islands-label">
-  <label class="control-label" id="islands-label" for="islands">Islands:</label>
-  <div class="shiny-options-group">
-    <div class="checkbox">
-      <label><input type="checkbox" name="islands" value="Biscoe" checked="checked"> <span>Biscoe</span></label>
-    </div>
-    <div class="checkbox">
-      <label><input type="checkbox" name="islands" value="Dream" checked="checked"> <span>Dream</span></label>
-    </div>
-    <div class="checkbox">
-      <label><input type="checkbox" name="islands" value="Torgersen" checked="checked"> <span>Torgersen</span></label>
-    </div>
-  </div>
-</div>
-</div>
-<div class="cell-output cell-output-display no-overflow-x" data-execution_count="3">
+<div class="cell-output cell-output-display no-overflow-x" data-execution_count="5">
 <div class="form-group shiny-input-container">
-  <label class="control-label" id="dist-label" for="dist">Distribution:</label>
+  <label class="control-label" id="variable-label" for="variable">Selecciona:</label>
   <div>
-    <select class="shiny-input-select form-select" id="dist">      <option value="kde" selected="">kde</option>
-      <option value="hist">hist</option></select>
+    <select class="shiny-input-select" id="variable" multiple="">      <option value="Ib">Ib</option>
+      <option value="Ig">Ig</option>
+      <option value="To">To</option>
+      <option value="RH">RH</option>
+      <option value="WS">WS</option>
+      <option value="WD">WD</option>
+      <option value="P">P</option></select>
+    <script type="application/json" data-for="variable" data-eval="[]">{"plugins": ["remove_button"]}</script>
   </div>
+</div><script type="application/json" data-html-dependency="">{"name": "selectize", "version": "0.12.6", "source": {"package": "shiny", "subdir": "www/shared/selectize/"}, "script": [{"src": "js/selectize.min.js"}, {"src": "accessibility/js/selectize-plugin-a11y.min.js"}], "stylesheet": [{"href": "css/selectize.min.css", "rel": "stylesheet"}], "meta": [], "all_files": false, "head": null}</script>
 </div>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="3">
-<div class="form-group shiny-input-container">
-  <div class="checkbox">
-    <label><input id="rug" type="checkbox" class="shiny-input-checkbox"> <span>Show rug marks</span></label>
-  </div>
-</div>
-</div>
-<p><a href="https://pypi.org/project/palmerpenguins/">Learn more</a> about the Palmer Penguins dataset.</p>
 </div></aside>
 <button class="collapse-toggle" type="button" title="Toggle sidebar" aria-expanded="true" aria-controls="bslib-sidebar-1">
     <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16" class="bi bi-chevron-left collapse-icon" style="fill:currentColor;" aria-hidden="true" role="img">
