@@ -3,6 +3,8 @@ title: "Esolmet data explorer"
 author: "G. Barrios"
 format: dashboard
 server: shiny
+resources:
+    - Temixco_2018_10Min.csv
 ---
 
 ## La App 

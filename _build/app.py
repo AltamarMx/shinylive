@@ -47,7 +47,7 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
     return None
 
 
-_static_assets = ["index_files"]
+_static_assets = ["index_files","Temixco_2018_10Min.csv"]
 _static_assets = {"/" + sa: Path(__file__).parent / sa for sa in _static_assets}
 
 app = App(
